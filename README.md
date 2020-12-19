@@ -58,7 +58,7 @@ Once the project moves into development, the press release can be used as a touc
   > Piecemeal is a cooking application that goes the extra mile. We offer the typical services of a cooking/recipe application. Beyond that, we allow you to make powerful custom searches that find recipes according to cuisines, food allergies, available ingredients, and most importantly, up to 40 macro/micro nutrients. Whether you have specific diet goals, require certain nutrient intake, or live with a food allergy, we have a recipe just for you!
 
 ## Problem ##
-  > Globally, about 250 million people suffer from a food allergy - 32 million of them reside in the US. Between the years of 2015-2018, 17% of US adults were on a special diet on any given day. Studies have shown that rates of food allergies and special diets are on the rise. With COVID-19 plaguing the nation, the rate of home cooking has sky-rocketed, but with so many specific dietary restrictions and goals, how are these people navigating
+  > Globally, about 250 million people suffer from a food allergy - 32 million of them reside in the US. Between the years of 2015-2018, 17% of US adults were on a special diet on any given day. Studies have shown that rates of food allergies and special diets are on the rise. With COVID-19 plaguing the nation, the rate of home cooking has sky-rocketed.
   > References: https://www.foodallergy.org/resources/facts-and-statistics, https://www.cdc.gov/nchs/products/databriefs/db389.htm
 
 ## Solution ##
