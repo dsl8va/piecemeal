@@ -6,10 +6,18 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
+html {
+  background: #78C2AD;
+}
+
+body {
+  background: white;
+}
+
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 * {
   box-sizing: border-box;
