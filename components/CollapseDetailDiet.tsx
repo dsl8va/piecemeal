@@ -8,6 +8,7 @@ export default function CollapseDetailDiet({ diet, definition }) {
     <>
       <Row>
         <span
+          className="mb-2"
           onClick={() => setOpen(!open)}
           aria-controls="collapse-text"
           aria-expanded={open}
@@ -16,7 +17,7 @@ export default function CollapseDetailDiet({ diet, definition }) {
         </span>
       </Row>
       <Row>
-        <Collapse in={open}>
+        <Collapse className="mb-2" in={open}>
           <div id="collapse-text">
             {definition}
           </div>

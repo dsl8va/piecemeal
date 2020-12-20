@@ -7,6 +7,7 @@ export default function CollapseDetail({ title, description }) {
   return (
     <>
       <Button
+        className="mb-3"
         onClick={() => setOpen(!open)}
         aria-controls="collapse-text"
         aria-expanded={open}
