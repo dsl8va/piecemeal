@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import { Button, Collapse } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Button, Collapse } from 'react-bootstrap';
 
-
-export default function CollapseDetail(props) {
+export default function CollapseDetail({ title, description }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -12,11 +11,11 @@ export default function CollapseDetail(props) {
         aria-controls="collapse-text"
         aria-expanded={open}
       >
-        {props.title}
+        {title}
       </Button>
       <Collapse in={open}>
         <div id="collapse-text">
-          {props.description}
+          {description}
         </div>
       </Collapse>
     </>

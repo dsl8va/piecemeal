@@ -1,28 +1,28 @@
-import InputGroup from 'react-bootstrap/InputGroup'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
-import React, {useState, useEffect} from 'react'
-import { useRouter } from 'next/router'
-import Image from 'next/image'
-import { Container, Row, Col, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
+import React from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import {
+  Form, Nav, Navbar, NavDropdown,
+} from 'react-bootstrap';
 
 export default function NavBar() {
-  const router = useRouter()
+  // const [search, setSearch] = useState('');
+  const router = useRouter();
 
   const handleClick = () => {
-    let query = (document.getElementById('query')as HTMLInputElement).value;
-    console.log('search:', query);
-    router.push('/explore')
-    //on click, we need to send a request to the api for a recipe search
-    //also need to redirect the page to the new recipes/id page
-  }
+    const search = (document.getElementById('query') as HTMLTextAreaElement).value;
+    console.log('search:', search);
+    router.push('/explore');
+  };
 
   return (
 
     <Navbar bg="white" expand="lg" sticky="top">
       <Navbar.Brand href="/">
-          <Image src='/logo.png' alt='Piecemeal Logo' width={50} height={50}/>
-        <span id='navbar-title'>
+        <Image src="/logo.png" alt="Piecemeal Logo" width={50} height={50} />
+        <span id="navbar-title">
           piecemeal
         </span>
       </Navbar.Brand>
@@ -46,24 +46,24 @@ export default function NavBar() {
       </Navbar.Collapse>
     </Navbar>
 
-    // <Container>
-    //   <Row className="row mb-3 mt-3">
-    //     <Col><h1>piecemeal</h1></Col>
-    //     <Col className="mt-2">
-    //       <InputGroup>
-    //         <FormControl
-    //           placeholder="Find a recipe"
-    //           aria-label="Find a recipe"
-    //           aria-describedby="basic-addon2"
-    //           id="query"
-    //         />
-    //         <InputGroup.Append>
-    //           <Button onClick={handleClick}variant="secondary">Explore</Button>
-    //         </InputGroup.Append>
-    //       </InputGroup>
-    //     </Col>
-    //   </Row>
-    // </Container>
+  // <Container>
+  //   <Row className="row mb-3 mt-3">
+  //     <Col><h1>piecemeal</h1></Col>
+  //     <Col className="mt-2">
+  //       <InputGroup>
+  //         <FormControl
+  //           placeholder="Find a recipe"
+  //           aria-label="Find a recipe"
+  //           aria-describedby="basic-addon2"
+  //           id="query"
+  //         />
+  //         <InputGroup.Append>
+  //           <Button onClick={handleClick}variant="secondary">Explore</Button>
+  //         </InputGroup.Append>
+  //       </InputGroup>
+  //     </Col>
+  //   </Row>
+  // </Container>
 
-  )
+  );
 }

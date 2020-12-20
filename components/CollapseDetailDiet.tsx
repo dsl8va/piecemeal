@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Button, Collapse, Row } from "react-bootstrap";
 
-
-export default function CollapseDetailDiet(props) {
+export default function CollapseDetailDiet({ diet, definition }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -13,13 +12,13 @@ export default function CollapseDetailDiet(props) {
           aria-controls="collapse-text"
           aria-expanded={open}
         >
-          <b>{props.diet}</b>
+          <b>{diet}</b>
         </span>
       </Row>
       <Row>
         <Collapse in={open}>
           <div id="collapse-text">
-            {props.definition}
+            {definition}
           </div>
         </Collapse>
       </Row>
