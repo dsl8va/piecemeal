@@ -15,7 +15,7 @@ export default function NavBar() {
   const handleClick = () => {
     const search = (document.getElementById('query') as HTMLTextAreaElement).value;
     console.log('search:', search);
-    router.push('/explore');
+    router.push('/results');
   };
 
   return (
@@ -23,7 +23,7 @@ export default function NavBar() {
     <Navbar bg="white" expand="lg" sticky="top">
       <Navbar.Brand href="/">
         <Row>
-          <Image src="/logo.png" alt="Piecemeal Logo" width={50} height={50} />
+          <Image className="pt-1 pb-1"src="/logo.png" alt="Piecemeal Logo" width={50} height={50} />
           <h1 id="navbar-title">
             piecemeal
           </h1>
@@ -35,13 +35,8 @@ export default function NavBar() {
         <Nav className="ml-3 mr-auto">
           <Nav.Link className="mr-3" as={Link} href="/">Home</Nav.Link>
           <Nav.Link className="mr-3" as={Link} href="/about">About</Nav.Link>
-          <NavDropdown title="Search By" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Cuisine</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Diet</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Ingredients</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Custom Search</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link className="mr-3" as={Link} href="/custom">Custom Search</Nav.Link>
+
         </Nav>
         <Form inline>
           <FormControl id="query" type="text" placeholder="Find a recipe..." className="mr-sm-1" />

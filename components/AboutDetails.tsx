@@ -4,7 +4,7 @@ import CollapseDiet from './CollapseDetailDiet'
 
 const Cuisines =
 <Container>
-  <Row>Currently we support 26 international cuisines:</Row>
+  <Row className="mb-3">Currently we support 26 different international cuisines:</Row>
   <Row>
     <ListGroup variant='flush'>
       <ListGroup.Item>African</ListGroup.Item>
@@ -47,7 +47,7 @@ const Cuisines =
 
 const Intolerances =
     <Container>
-      <Row>Narrow your search down by the supported list of diet intolerances below:</Row>
+      <Row className="mb-3">Narrow your search down by the supported list of diet intolerances below:</Row>
       <Row>
         <ListGroup variant='flush'>
           <ListGroup.Item>Dairy</ListGroup.Item>
@@ -75,7 +75,7 @@ const Intolerances =
 
 const CustomSearch =
 <Container>
-    <Row>Our calling card. You can create a custom search by identifying a max or min amount of the following macro and micro nutrients:</Row>
+    <Row className="mb-3">Our calling card. You can create a custom search by identifying a max or min amount of the following macro and micro nutrients:</Row>
     <Row>
     <ListGroup variant='flush'>
       <ListGroup.Item>Calories (in kcal)</ListGroup.Item>
@@ -142,7 +142,7 @@ const whole30 = 'Allowed ingredients include meat, fish/seafood, eggs, vegetable
 
 const Diets =
   <Container>
-    <Row>We support a variety of diets. Click on any for additional details. </Row>
+    <Row className="mb-3">We support a variety of diets. Click on any for additional details. </Row>
     <CollapseDiet diet={'Gluten Free'} definition={gluten}/>
     <CollapseDiet diet={'Ketogenic'} definition={keto}/>
     <CollapseDiet diet={'Vegetarian'} definition={veg}/>
