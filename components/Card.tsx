@@ -3,11 +3,6 @@ import { Card, Button } from 'react-bootstrap';
 
 export default function CardTemplate({ title, ready, diet, image }) {
 
-  // if (diet.length === 0) {
-  //   diet = ["N/A"];
-  // }
-  // const dietItems = diet.join(' / ')
-
   return (
     <>
       <Card className="mb-3" style={{ width: '18rem' }}>
