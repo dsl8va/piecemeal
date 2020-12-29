@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import CardTemplate from '../components/Card';
@@ -25,13 +25,19 @@ const Results = () => {
     <Container>
       <Jumbo title={`${number} matching recipes`} text={"Blah Blah Blah."}/>
       <Row as={Link} href="/custom">Back to search</Row>
-      <span className={styles.recipeList}>
-        {recipes.map(recipe => {
-          return (
-            <CardTemplate id={recipe.id} title={recipe.title} image={recipe.image}/>
-          )
-        })}
-      </span>
+      {recipes.length > 0 ?
+        <span className={styles.recipeList}>
+          {recipes.map(recipe => {
+            return (
+              <CardTemplate key={recipe.id} id={recipe.id} title={recipe.title} image={recipe.image}/>
+            )
+          })}
+        </span>
+        :
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      }
     </Container>
   )
 }
