@@ -1,4 +1,6 @@
-
+import React, {useContext, useEffect} from 'react';
+import { Container } from 'react-bootstrap';
+import {SearchContext} from './searchContext';
 
 // export async function getServerSideProps() {
 
@@ -9,9 +11,17 @@
 // }
 
 
-export default function Results() {
+const Results = () => {
+  const {recipes} = useContext(SearchContext);
+
+  console.log('recipes state', recipes)
 
   return (
-    <div>Results</div>
+    <Container>
+      <div>Results</div>
+
+    </Container>
   )
 }
+
+export default Results;
