@@ -36,7 +36,6 @@ export default function NavBar() {
           <Nav.Link className="mr-3" as={Link} href="/">Home</Nav.Link>
           <Nav.Link className="mr-3" as={Link} href="/about">About</Nav.Link>
           <Nav.Link className="mr-3" as={Link} href="/custom">Custom Search</Nav.Link>
-          <Nav.Link className="mr-3" as={Link} href="/results">Results</Nav.Link>
 
         </Nav>
         <Form inline>

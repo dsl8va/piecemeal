@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import '../styles/globals.css'
 import 'bootswatch/dist/minty/bootstrap.min.css';
-import {SearchProvider} from './searchContext'
+import {SearchProvider} from '../libs/searchContext'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 function MyApp({ Component, pageProps }) {

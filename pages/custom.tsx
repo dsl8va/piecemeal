@@ -6,12 +6,12 @@ import { Button, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
 import { cuisine, diet, intolerance, nutrient, vitamin, } from '../libs/SearchParams';
 import Dropdown from '../components/Dropdown';
 import Jumbo from '../components/Jumbo';
-import {SearchContext} from './searchContext';
+import {SearchContext} from './../libs/searchContext';
 import queryMaker from '../libs/APIQueryMaker';
 
 export default function About() {
 
-  const {handleRecipes} = useContext(SearchContext);
+  const {handleRecipes, recipes, handleQuery} = useContext(SearchContext);
 
   const router = useRouter();
 
@@ -24,7 +24,9 @@ export default function About() {
     const queryString = await queryMaker(inputs);
     console.log('querystring', queryString)
 
-    const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch${queryString}&number=100&apiKey=32f3365bab9b42479c0594d00489d7ca`)
+    // await handleQuery(`https://api.spoonacular.com/recipes/complexSearch${queryString}&number=100&apiKey=32f3365bab9b42479c0594d00489d7ca`)
+
+    const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch${queryString}&number=100&addRecipeNutrition=true&apiKey=32f3365bab9b42479c0594d00489d7ca`)
       .then(response => {
         return response.json();
       })
@@ -42,6 +44,9 @@ export default function About() {
       </Head>
 
       <Jumbo title={"Custom Search"} text={"Create your own custom search with as little or as many parameters as you want! We have recipes for every cook."}/>
+
+      {recipes.length > 0 &&
+      <Row as={Link} href='/results'>Back to search results</Row>}
 
       <Form id="custom" className="mt-3 mb-3" onSubmit={searchRecipe}>
 

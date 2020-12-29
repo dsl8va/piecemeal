@@ -13,16 +13,13 @@ import Jumbo from '../components/Jumbo'
 //   const recipes = data.recipes;
 
 //   const title1 = recipes[0].title;
-//   const title2 = recipes[1].title;
-//   const title3 = recipes[2].title;
-//   const ready1 = recipes[0].readyInMinutes;
-//   const ready2 = recipes[1].readyInMinutes;
-//   const ready3 = recipes[2].readyInMinutes;
-//   const diet1 = recipes[0].diets; // arrays
-//   const diet2 = recipes[1].diets;
-//   const diet3 = recipes[2].diets;
-//   const image1 = recipes[0].image;
-//   const image2 = recipes[1].image;
+  // const title2 = recipes[1].title;
+  // const title3 = recipes[2].title;
+  // const id1 = recipes[0].id;
+  // const id2 = recipes[1].id;
+  // const id3 = recipes[2].id;
+  // const image1 = recipes[0].image;
+  // const image2 = recipes[1].image;
 //   const image3 = recipes[2].image;
 
 //   return {
@@ -34,7 +31,7 @@ import Jumbo from '../components/Jumbo'
 // }
 
 
-export default function Home({title1, ready1, diet1, image1, title2, ready2, diet2, image2, title3, ready3, diet3, image3}) {
+export default function Home({title1, image1, id1, title2, image2, id2, title3, image3, id3}) {
   return (
     <Container>
       <Head>
@@ -45,9 +42,9 @@ export default function Home({title1, ready1, diet1, image1, title2, ready2, die
 
       <h3>Featured recipes:</h3>
       <CardDeck>
-        <CardTemplate title={title1} ready={ready1} diet={diet1} image={image1}/>
-        <CardTemplate title={title2} ready={ready2} diet={diet2} image={image2}/>
-        <CardTemplate title={title3} ready={ready3} diet={diet3} image={image3}/>
+        <CardTemplate id={id1} title={title1} image={image1}/>
+        <CardTemplate id={id2} title={title2} image={image2}/>
+        <CardTemplate id={id3} title={title3} image={image3}/>
 
       </CardDeck>
 
