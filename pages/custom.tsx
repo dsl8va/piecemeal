@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { Button, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
 import { cuisine, diet, intolerance, nutrient, vitamin, } from '../libs/SearchParams';
 import Dropdown from '../components/Dropdown';
@@ -10,19 +10,24 @@ import {SearchContext} from './../libs/searchContext';
 import queryMaker from '../libs/APIQueryMaker';
 
 export default function About() {
-
+  const [isLoading, setLoading] = useState(false);
   const {handleRecipes, recipes, handleQuery} = useContext(SearchContext);
+
+  useEffect(() => {
+      if (isLoading) {
+        setLoading(false);
+      }
+    }, [isLoading]);
 
   const router = useRouter();
 
   const searchRecipe = async e => {
     e.preventDefault();
+    setLoading(true);
 
     const inputs = document.getElementById("custom").elements;
-    console.log('html', inputs);
 
     const queryString = await queryMaker(inputs);
-    console.log('querystring', queryString)
 
     // await handleQuery(`https://api.spoonacular.com/recipes/complexSearch${queryString}&number=100&apiKey=32f3365bab9b42479c0594d00489d7ca`)
 
@@ -64,8 +69,8 @@ export default function About() {
         <Dropdown title={"Intolerances"} options={intolerance} minmax={false}/>
         <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
         <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
-        <Button onClick={searchRecipe} className="mb-3" variant="secondary" type="submit">
-          Search
+        <Button onClick={!isLoading ? searchRecipe : null} className="mb-3" variant="secondary" type="submit">
+          {isLoading ? 'Loading…' : 'Search'}
         </Button>
       </Form>
 

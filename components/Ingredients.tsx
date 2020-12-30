@@ -12,6 +12,7 @@ export default function Ingredients({ingredients}) {
         return (
           <ListGroup.Item key={ingredient.name}>
             <input className="mr-3" type="checkbox"></input>
+
           {fraction} {ingredient.unit} {ingredient.name}</ListGroup.Item>
         )
       })

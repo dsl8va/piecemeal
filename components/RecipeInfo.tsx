@@ -7,10 +7,10 @@ export default function RecipeInfo({time, servings, diet, calories, fat, carbs, 
   if (diet.length === 0) {
     dietList = 'none'
   } else {
-    for (let i = 0; i < diet.length; i++) {
+    for (let i = 1; i < diet.length; i++) {
       dietList += diet[0];
       if (i === diet.length-1) {
-        dietList += diet[i];
+        dietList += `, ${diet[i]}`;
       } else {
         dietList += `, ${diet[i]}, `
       }
@@ -18,7 +18,7 @@ export default function RecipeInfo({time, servings, diet, calories, fat, carbs, 
   }
 
   return (
-    <Card className="mt-3 mx-auto">
+    <Card>
       <Card.Body>
         <Card.Text><b>Ready in:</b> {time} mins</Card.Text>
         <Card.Text><b>Servings:</b> {servings}</Card.Text>

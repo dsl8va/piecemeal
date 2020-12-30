@@ -5,6 +5,7 @@ import {SearchContext} from './../libs/searchContext';
 import CardTemplate from '../components/Card';
 import styles from '../styles/results.module.css';
 import Link from 'next/link';
+import Head from 'next/head';
 
 // export async function getServerSideProps() {
 //   const {query} = useContext(SearchContext);
@@ -23,6 +24,9 @@ const Results = () => {
 
   return (
     <Container>
+       <Head>
+        <title>Search Results</title>
+      </Head>
       <Jumbo title={`${number} matching recipes`} text={"Blah Blah Blah."}/>
       <Row as={Link} href="/custom">Back to search</Row>
       {recipes.length > 0 ?
