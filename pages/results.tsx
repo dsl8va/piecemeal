@@ -33,7 +33,7 @@ const Results = () => {
         <span className={styles.recipeList}>
           {recipes.map(recipe => {
             return (
-              <CardTemplate key={recipe.id} id={recipe.id} title={recipe.title} image={recipe.image}/>
+              <CardTemplate key={recipe.id} id={recipe.id} title={recipe.title} image={recipe.image} ready={recipe.readyInMinutes}  random={false}/>
             )
           })}
         </span>

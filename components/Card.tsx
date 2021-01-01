@@ -3,9 +3,9 @@ import { Card, Button } from 'react-bootstrap';
 import {SearchContext} from '../libs/searchContext';
 import { useRouter } from 'next/router';
 
-export default function CardTemplate({ id, title, image }) {
+export default function CardTemplate({ id, title, image, ready, random }) {
 
-  const {handleCurrentRecipe, recipes} = useContext(SearchContext);
+  const {handleCurrentRecipe, recipes, featured} = useContext(SearchContext);
   const router = useRouter();
 
   const handleClick = async (e) => {
@@ -15,6 +15,18 @@ export default function CardTemplate({ id, title, image }) {
         await handleCurrentRecipe(recipe);
       }
     }
+    await router.push('/recipe');
+  }
+
+  const handleClickRandom = async (e) => {
+    const searchID = e.target.parentNode.parentNode.id;
+    const res = await fetch(`https://api.spoonacular.com/recipes/${searchID}/information?includeNutrition=true&apiKey=32f3365bab9b42479c0594d00489d7ca`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        handleCurrentRecipe(data);
+      })
 
     await router.push('/recipe');
   }
@@ -25,7 +37,12 @@ export default function CardTemplate({ id, title, image }) {
         <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <Button onClick={handleClick} variant="secondary">See the recipe</Button>
+          <Card.Text>Ready in {ready} minutes</Card.Text>
+          {!random ?
+            <Button onClick={handleClick} variant="secondary">See the recipe</Button>
+            :
+            <Button onClick={handleClickRandom} variant="secondary">See the recipe</Button>
+          }
         </Card.Body>
       </Card>
     </>

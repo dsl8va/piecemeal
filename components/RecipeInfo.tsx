@@ -18,7 +18,7 @@ export default function RecipeInfo({time, servings, diet, calories, fat, carbs, 
   }
 
   return (
-    <Card>
+    <Card className="mx-auto" border="secondary">
       <Card.Body>
         <Card.Text><b>Ready in:</b> {time} mins</Card.Text>
         <Card.Text><b>Servings:</b> {servings}</Card.Text>

@@ -9,14 +9,7 @@ import Ingredients from '../components/Ingredients';
 import Head from 'next/head';
 import Directions from '../components/Directions';
 import NutrientGraph from '../components/NutrientGraph';
-
-// export async function getServerSideProps() {
-//   const {currentRecipe} = useContext(SearchContext);
-//   const res = await fetch()
-//   return {
-
-//   }
-// }
+import RecipeCard from '../components/RecipeCard';
 
 const Recipe = () => {
   const {currentRecipe} = useContext(SearchContext);
@@ -24,7 +17,10 @@ const Recipe = () => {
   var blurb, health;
   if (currentRecipe) {
     if (currentRecipe.summary) {
+
       blurb = currentRecipe.summary.split('.')[0];
+      blurb = `${blurb}`
+      console.log('blurb', blurb)
     }
     health = currentRecipe.nutrition;
   }
@@ -47,9 +43,10 @@ const Recipe = () => {
       <>
         <Row as={Link} href="/results">Back to search results</Row>
         <Jumbo title={currentRecipe.title} text={blurb}/>
-        <Row className="mb-3 mt-3 mx-auto">
-          <Col sm={8}>
+        <Row className="my-3">
+          {/* <Col sm={8}> */}
             <Image
+              className="mx-auto"
               src={currentRecipe.image}
               alt="Picture of recipe"
               height={400}
@@ -57,14 +54,15 @@ const Recipe = () => {
               fluid
               rounded
             />
-          </Col>
-          <Col sm={4}>
+          {/* </Col> */}
+          {/* <Col sm={4}> */}
             <RecipeInfo time={currentRecipe.readyInMinutes} servings={currentRecipe.servings} diet={currentRecipe.diets} calories={amountFinder(health.nutrients, "Calories")} fat={amountFinder(health.nutrients, "Fat")} carbs={amountFinder(health.nutrients, "Carbohydrates")} protein={amountFinder(health.nutrients, "Protein")}/>
-          </Col>
+          {/* </Col> */}
         </Row>
-        <Accordian title={"Ingredients"} body={<Ingredients ingredients={health.ingredients}/>}/>
-        <Accordian title={"Directions"} body={<Directions array={currentRecipe.analyzedInstructions}/>}/>
-        <Accordian title={"Nutritional Information"} body={<NutrientGraph carbsperc={health.caloricBreakdown.percentCarbs} fatperc={health.caloricBreakdown.percentFat} proteinperc={health.caloricBreakdown.percentProtein} allNutrients={health.nutrients}/>}/>
+
+        <RecipeCard title={"Ingredients"} body={ <Ingredients ingredients={health.ingredients}/>}/>
+        <RecipeCard title={"Directions"} body={ <Directions array={currentRecipe.analyzedInstructions}/>}/>
+        <RecipeCard title={"Nutritional Information"} body={ <NutrientGraph carbsperc={health.caloricBreakdown.percentCarbs} fatperc={health.caloricBreakdown.percentFat} proteinperc={health.caloricBreakdown.percentProtein} allNutrients={health.nutrients}/>}/>
 
       </>
       }

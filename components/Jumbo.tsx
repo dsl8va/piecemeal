@@ -9,9 +9,7 @@ export default function Jumbo({ title, text }) {
     <Jumbotron className={styles.jumbo}>
       <Container>
         <h1>{title}</h1>
-        <p>
           {text}
-        </p>
       </Container>
     </Jumbotron>
 

@@ -14,22 +14,21 @@ export default function NutrientGraph({carbsperc, fatperc, proteinperc, allNutri
     <Container>
       <Card>
         <Card.Body>
-          <Card.Text> Carbohydrates -
+          <Card.Text><b>% Daily Value</b></Card.Text>
+          Carbohydrates
             <ProgressBar variant="secondary" now={carbsperc} label={`${carbsperc}%`}/>
-          </Card.Text>
-          <Card.Text> Fat -
+          Fat
             <ProgressBar variant="secondary" now={fatperc} label={`${fatperc}%`}/>
-          </Card.Text>
-          <Card.Text> Protein -
+          Protein
             <ProgressBar variant="secondary" now={proteinperc} label={`${proteinperc}%`}/>
-          </Card.Text>
+
         </Card.Body>
       </Card>
-       <Button onClick={handleClick} className="mt-3 mx-auto" variant="primary" size="sm">
+       <Button onClick={handleClick} className="my-3" variant="primary" size="sm" block>
           {detail ? 'Hide detailed nutritional information' : 'Show detailed nutritional information'}
        </Button>
        {detail &&
-          <Table>
+          <Table className="mx-auto">
             <thead>
               <tr>
                 <th>Nutrient</th>
