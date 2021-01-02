@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container, Row, Image, Card, Col } from 'react-bootstrap';
+import { Container, Row, Image, Card, Col, Button } from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import Link from 'next/link';
@@ -10,9 +10,10 @@ import Head from 'next/head';
 import Directions from '../components/Directions';
 import NutrientGraph from '../components/NutrientGraph';
 import RecipeCard from '../components/RecipeCard';
+import styles from '../styles/Recipe.module.css';
 
 const Recipe = () => {
-  const {currentRecipe} = useContext(SearchContext);
+  const {currentRecipe, recipes} = useContext(SearchContext);
   console.log('current', currentRecipe)
   var blurb, health;
   if (currentRecipe) {
@@ -41,10 +42,16 @@ const Recipe = () => {
       </Head>
       {!Array.isArray(currentRecipe) &&
       <>
-        <Row as={Link} href="/results">Back to search results</Row>
-        <Jumbo title={currentRecipe.title} text={blurb}/>
+      {recipes.length > 0 &&
+      <Link href="/results" passHref>
+        <Button className="mx-3 my-3" variant="outline-secondary">Back to search results</Button>
+      </Link>
+      }
+
+      <h1 className={styles.center}>{currentRecipe.title}</h1>
+
         <Row className="my-3">
-          {/* <Col sm={8}> */}
+
             <Image
               className="mx-auto"
               src={currentRecipe.image}
@@ -54,8 +61,7 @@ const Recipe = () => {
               fluid
               rounded
             />
-          {/* </Col> */}
-          {/* <Col sm={4}> */}
+
             <RecipeInfo time={currentRecipe.readyInMinutes} servings={currentRecipe.servings} diet={currentRecipe.diets} calories={amountFinder(health.nutrients, "Calories")} fat={amountFinder(health.nutrients, "Fat")} carbs={amountFinder(health.nutrients, "Carbohydrates")} protein={amountFinder(health.nutrients, "Protein")}/>
           {/* </Col> */}
         </Row>

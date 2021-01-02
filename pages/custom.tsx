@@ -2,12 +2,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, {useState, useContext, useEffect} from 'react'
-import { Button, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, ListGroup, Row, Image } from 'react-bootstrap';
 import { cuisine, diet, intolerance, nutrient, vitamin, } from '../libs/SearchParams';
 import Dropdown from '../components/Dropdown';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import queryMaker from '../libs/APIQueryMaker';
+import styles from '../styles/Custom.module.css';
 
 export default function About() {
   const [isLoading, setLoading] = useState(false);
@@ -43,17 +44,19 @@ export default function About() {
   }
 
   return (
-    <Container>
+    <Container className={styles.pageContainer}>
       <Head>
         <title>Custom Search</title>
       </Head>
 
-      <Jumbo title={"Custom Search"} text={"Create your own custom search with as little or as many parameters as you want! We have recipes for every cook."}/>
+      <Jumbo image={"/images/kitchen9.jpeg"} imageDesc={"Custom search page picture"} title={"Create your own custom search"} text={"with as few or as many parameters as you like"}/>
 
       {recipes.length > 0 &&
-      <Row as={Link} href='/results'>Back to search results</Row>}
+      <Link href="/results" passHref>
+        <Button className={styles.button} variant="outline-secondary">Back to search results</Button>
+      </Link>}
 
-      <Form id="custom" className="mt-3 mb-3" onSubmit={searchRecipe}>
+      <Form id="custom" className={styles.customForm} onSubmit={searchRecipe}>
 
          <Form.Row>
           <Form.Label column sm={2}>

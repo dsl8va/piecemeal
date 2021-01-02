@@ -7,14 +7,14 @@ export default function CollapseDetail({ title, description }) {
   return (
     <>
       <Button
-        className="mb-3"
+        className="mb-3 ml-3"
         onClick={() => setOpen(!open)}
         aria-controls="collapse-text"
         aria-expanded={open}
       >
         {title}
       </Button>
-      <Collapse in={open}>
+      <Collapse className="mb-3" in={open}>
         <div id="collapse-text">
           {description}
         </div>

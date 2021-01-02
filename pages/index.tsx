@@ -3,8 +3,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { useContext, useEffect } from 'react'
-import { Container, CardDeck, Jumbotron } from 'react-bootstrap'
+import { Container, CardDeck, Jumbotron, Image } from 'react-bootstrap'
 import CardTemplate from '../components/Card'
+import styles from '../styles/index.module.css';
 import Jumbo from '../components/Jumbo'
 import { SearchContext } from '../libs/searchContext'
 
@@ -40,15 +41,26 @@ export default function Home({title1, ready1, id1, image1, title2, ready2, id2, 
   // handleFeatured(recipes);
   // console.log('home', featured)
   return (
-    <Container>
+    <Container className={styles.pageContainer}>
       <Head>
         <title>piecemeal</title>
       </Head>
 
-      <Jumbo title={"Welcome!"} text={"Our mission is to empower you to create delicious meals according to your tastes, diets, or even your food intolerances. Take a look at what we can offer you!"}/>
-
-      <h3>Featured recipes:</h3>
-      <CardDeck>
+      <Jumbo image={"/images/kitchen3.jpg"} imageDesc={"Home page picture"} title={"Piecemeal makes cooking easier"} text={"with the ability to custom search for any kind of recipe"}/>
+      {/* <div className={styles.imageContainer}>
+        <Image
+          className={styles.image}
+          src="/images/kitchen3.jpg"
+          alt="Home page picture"
+          // width={"100%"}
+          // height={200}
+          fluid
+        />
+        <h1 className={styles.imageTitle}>Piecemeal makes cooking easier</h1>
+        <h3 className={styles.imageText}>with the ability to custom search for any kind of recipe</h3>
+      </div> */}
+      <h3 className="my-3 ml-4">Featured recipes:</h3>
+      <CardDeck className="my-3 mx-3">
         <CardTemplate id={id1} title={title1} image={image1} ready={ready1} random={true}/>
         <CardTemplate id={id2} title={title2} image={image2} ready={ready2} random={true}/>
         <CardTemplate id={id3} title={title3} image={image3} ready={ready3} random={true}/>

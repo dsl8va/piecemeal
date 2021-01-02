@@ -1,21 +1,11 @@
 import React, {useContext, useEffect} from 'react';
-import { Container, Row, Spinner } from 'react-bootstrap';
+import { Container, Row, Spinner, Image, Button } from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import CardTemplate from '../components/Card';
-import styles from '../styles/results.module.css';
+import styles from '../styles/Results.module.css';
 import Link from 'next/link';
 import Head from 'next/head';
-
-// export async function getServerSideProps() {
-//   const {query} = useContext(SearchContext);
-//   const res = await fetch(query);
-//   const data = await res.json();
-
-//   return {
-//     props: {data}
-//   }
-// }
 
 const Results = () => {
   const {recipes, query} = useContext(SearchContext);
@@ -23,12 +13,16 @@ const Results = () => {
   let number = recipes.length;
 
   return (
-    <Container>
+    <Container className={styles.pageContainer}>
        <Head>
         <title>Search Results</title>
       </Head>
-      <Jumbo title={`${number} matching recipes`} text={"Blah Blah Blah."}/>
-      <Row as={Link} href="/custom">Back to search</Row>
+      <Jumbo image={"/images/kitchen8.jpeg"} imageDesc={"Results page picture"} title={`${number} matching recipes`} text={"let's get cooking!"}/>
+
+      <Link href="/custom" passHref>
+        <Button className={styles.button} variant="outline-secondary">Back to search</Button>
+      </Link>
+
       {recipes.length > 0 ?
         <span className={styles.recipeList}>
           {recipes.map(recipe => {

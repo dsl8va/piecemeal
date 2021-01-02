@@ -13,7 +13,7 @@ import {SearchProvider} from '../libs/searchContext'
 function MyApp({ Component, pageProps }) {
 
   return (
-    <Container>
+    <Container id="main-container">
       <SearchProvider>
         <Navbar />
         <Component {...pageProps}/>
