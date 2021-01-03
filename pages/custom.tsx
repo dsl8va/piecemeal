@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, {useState, useContext, useEffect} from 'react'
-import { Button, Col, Container, Form, ListGroup, Row, Image } from 'react-bootstrap';
+import { Button, Col, Container, Form, ListGroup, Row, Image, Spinner } from 'react-bootstrap';
 import { cuisine, diet, intolerance, nutrient, vitamin, } from '../libs/SearchParams';
 import Dropdown from '../components/Dropdown';
 import Jumbo from '../components/Jumbo';
@@ -11,16 +11,16 @@ import queryMaker from '../libs/APIQueryMaker';
 import styles from '../styles/Custom.module.css';
 
 export default function About() {
-
+  const [loading, setLoading] = useState(false);
   const {handleRecipes, recipes, handleQuery} = useContext(SearchContext);
 
   const router = useRouter();
 
   const searchRecipe = async e => {
     e.preventDefault();
-
+    await setLoading(!loading);
     const inputs = document.getElementById("custom").elements;
-
+    console.log('inputs', inputs);
     const queryString = await queryMaker(inputs);
 
     console.log('querystring', queryString)
@@ -32,8 +32,8 @@ export default function About() {
       .then(data => {
         handleRecipes(data.results);
       })
-
-    await router.push('/results');
+    await setLoading(!loading);
+    // await router.push('/results');
   }
 
   return (
@@ -55,7 +55,7 @@ export default function About() {
           <Form.Label column sm={2}>
             Keywords
           </Form.Label>
-          <Col sm={3}>
+          <Col sm={3} className={styles.keyword}>
             <Form.Control id="query" type="text" placeholder="Search keywords here..." />
           </Col>
         </Form.Row>
@@ -66,8 +66,17 @@ export default function About() {
           <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
           <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
 
-        <Button onClick={searchRecipe} className="mb-3" variant="secondary" type="submit">
-          Search
+        <Button onClick={searchRecipe} className={styles.search} variant="secondary" type="submit">
+          {!loading ? "Search" :
+            <Spinner
+            as="span"
+            variant="white"
+            animation="border"
+            size="sm"
+            role="status"
+          />
+          }
+          <span className="sr-only">Loading...</span>
         </Button>
       </Form>
 

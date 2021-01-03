@@ -11,13 +11,15 @@ const Results = () => {
   const {recipes, query} = useContext(SearchContext);
 
   let number = recipes.length;
+  let title = number == 0 ? "Oh no! Looks like there are no matching recipes" : `${number} matching recipes`;
+  let text = number == 0 ? "try again with less stringent search parameters" : "let's get cooking!"
 
   return (
     <Container className={styles.pageContainer}>
        <Head>
         <title>Search Results</title>
       </Head>
-      <Jumbo image={"/images/kitchen8.jpeg"} imageDesc={"Results page picture"} title={`${number} matching recipes`} text={"let's get cooking!"}/>
+      <Jumbo image={"/images/kitchen8.jpeg"} imageDesc={"Results page picture"} title={title} text={text}/>
 
       <Link href="/custom" passHref>
         <Button className={styles.button} variant="outline-secondary">Back to search</Button>
@@ -32,9 +34,7 @@ const Results = () => {
           })}
         </span>
         :
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+        null
       }
     </Container>
   )

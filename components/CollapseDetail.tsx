@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import { Button, Collapse } from 'react-bootstrap';
+import { Accordion, Button, Card, Collapse } from 'react-bootstrap';
 
 export default function CollapseDetail({ title, description }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <Button
-        className="mb-3 ml-3"
-        onClick={() => setOpen(!open)}
-        aria-controls="collapse-text"
-        aria-expanded={open}
-      >
-        {title}
-      </Button>
-      <Collapse className="mb-3" in={open}>
-        <div id="collapse-text">
-          {description}
-        </div>
-      </Collapse>
-    </>
+
+    <Accordion defaultActiveKey="0">
+      <Card className="my-3 mx-3" border="secondary">
+        <Accordion.Toggle as={Card.Header} eventKey="1" style={{cursor: "pointer"}}>
+          <strong>{title}</strong>
+        </Accordion.Toggle>
+        <Accordion.Collapse eventKey="1">
+          <Card.Body>{description}</Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
+
+
   );
 }

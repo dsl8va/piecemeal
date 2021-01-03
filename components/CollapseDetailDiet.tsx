@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Button, Collapse, Row } from "react-bootstrap";
+import styles from "../styles/CollapseDetailDiet.module.css"
 
 export default function CollapseDetailDiet({ diet, definition }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Row>
+      <Row className={styles.title}>
         <span
           className="mb-2"
           onClick={() => setOpen(!open)}
