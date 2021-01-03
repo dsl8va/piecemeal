@@ -1,8 +1,9 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Jumbo from "../components/Jumbo";
-import styles from "../styles/404.module.css"
+import styles from "../styles/404.module.css";
 
+// Custom 404 page rendering
 export default function My404() {
   return (
     <Container className={styles.pageContainer}>

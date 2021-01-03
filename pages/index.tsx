@@ -1,14 +1,11 @@
-// this is the root file that shows the home page
-
-import Head from 'next/head'
-import Link from 'next/link'
-import React, { useContext, useEffect } from 'react'
-import { Container, CardDeck, Jumbotron, Image } from 'react-bootstrap'
-import CardTemplate from '../components/Card'
+import Head from 'next/head';
+import React from 'react';
+import { Container, CardDeck } from 'react-bootstrap';
+import CardTemplate from '../components/Card';
 import styles from '../styles/index.module.css';
-import Jumbo from '../components/Jumbo'
-import { SearchContext } from '../libs/searchContext'
+import Jumbo from '../components/Jumbo';
 
+// Root Home page
 export async function getStaticProps() {
 
   const res = await fetch(`https://api.spoonacular.com/recipes/random?number=3&apiKey=32f3365bab9b42479c0594d00489d7ca`);

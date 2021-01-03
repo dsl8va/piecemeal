@@ -3,9 +3,10 @@ import { Card, Button } from 'react-bootstrap';
 import {SearchContext} from '../libs/searchContext';
 import { useRouter } from 'next/router';
 
+// Card template for use throughout application
 export default function CardTemplate({ id, title, image, ready, random }) {
 
-  const {handleCurrentRecipe, recipes, featured} = useContext(SearchContext);
+  const {handleCurrentRecipe, recipes} = useContext(SearchContext);
   const router = useRouter();
 
   const handleClick = async (e) => {
@@ -20,14 +21,13 @@ export default function CardTemplate({ id, title, image, ready, random }) {
 
   const handleClickRandom = async (e) => {
     const searchID = e.target.parentNode.parentNode.id;
-    const res = await fetch(`https://api.spoonacular.com/recipes/${searchID}/information?includeNutrition=true&apiKey=32f3365bab9b42479c0594d00489d7ca`)
+    await fetch(`https://api.spoonacular.com/recipes/${searchID}/information?includeNutrition=true&apiKey=32f3365bab9b42479c0594d00489d7ca`)
       .then(response => {
         return response.json();
       })
       .then(data => {
         handleCurrentRecipe(data);
       })
-
     await router.push('/recipe');
   }
 

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Card, ListGroup } from "react-bootstrap";
-import Image from 'next/image';
+import { Card } from "react-bootstrap";
 import styles from '../styles/Step.module.css'
 
-
+// Template for each step on each Recipe page
 export default function Step({step}) {
   const [complete, setComplete] = useState(false);
   let textStyle = complete ? "#A9A9A9" : "#808080";

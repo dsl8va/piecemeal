@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, CardColumns, CardDeck, CardGroup, Row } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
-
+// Template for quick info on each Recipe page
 export default function RecipeInfo({time, servings, diet, calories, fat, carbs, protein}) {
   let dietList = '';
   if (diet.length === 0) {

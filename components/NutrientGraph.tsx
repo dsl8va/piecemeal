@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Card, Container, ListGroup, ProgressBar, Table } from "react-bootstrap";
+import { Button, Card, Container, ProgressBar, Table } from "react-bootstrap";
 
-
+// Nutrient information template for Recipe page
 export default function NutrientGraph({carbsperc, fatperc, proteinperc, allNutrients}) {
 
   const [detail, setDetail] = useState(false);

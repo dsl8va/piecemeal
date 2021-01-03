@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Accordion, Button, Card, Collapse } from 'react-bootstrap';
+import { Accordion, Card } from 'react-bootstrap';
 
+// Accordian template for About page
 export default function CollapseDetail({ title, description }) {
-  const [open, setOpen] = useState(false);
-
   return (
 
     <Accordion defaultActiveKey="0">
@@ -16,7 +15,6 @@ export default function CollapseDetail({ title, description }) {
         </Accordion.Collapse>
       </Card>
     </Accordion>
-
 
   );
 }

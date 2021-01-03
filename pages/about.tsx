@@ -1,12 +1,13 @@
-import Head from 'next/head'
-import React from 'react'
-import CollapseDetail from '../components/CollapseDetail'
-import { Container} from 'react-bootstrap'
-import Jumbo from '../components/Jumbo'
+import Head from 'next/head';
+import React from 'react';
+import CollapseDetail from '../components/CollapseDetail';
+import { Container} from 'react-bootstrap';
+import Jumbo from '../components/Jumbo';
 import styles from '../styles/About.module.css';
 
 const Details = require('../components/AboutDetails')
 
+// About page
 export default function About() {
   return (
     <Container className={styles.pageContainer}>

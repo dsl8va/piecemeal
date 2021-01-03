@@ -1,8 +1,8 @@
 import React from "react";
 import { Image } from "react-bootstrap";
-import styles from '../styles/Jumbo.module.css'
+import styles from '../styles/Jumbo.module.css';
 
-
+// Jumbo template for all web pages
 export default function Jumbo({ image, imageDesc, title, text }) {
 
   return (
@@ -11,8 +11,6 @@ export default function Jumbo({ image, imageDesc, title, text }) {
         className={styles.image}
         src={image}
         alt={imageDesc}
-        // width={"100%"}
-        // height={200}
         fluid
       />
       <h1 className={styles.imageTitle}>{title}</h1>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Collapse, Row } from "react-bootstrap";
+import { Collapse, Row } from "react-bootstrap";
 import styles from "../styles/CollapseDetailDiet.module.css"
 
+// Dropdown template for Diet section in About page
 export default function CollapseDetailDiet({ diet, definition }) {
   const [open, setOpen] = useState(false);
 

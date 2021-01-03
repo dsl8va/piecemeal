@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, {useState, useContext, useEffect} from 'react'
-import { Button, Col, Container, Form, ListGroup, Row, Image, Spinner } from 'react-bootstrap';
+import React, {useState, useContext } from 'react';
+import { Button, Col, Container, Form, Spinner } from 'react-bootstrap';
 import { cuisine, diet, intolerance, nutrient, vitamin, } from '../libs/SearchParams';
 import Dropdown from '../components/Dropdown';
 import Jumbo from '../components/Jumbo';
@@ -10,9 +10,10 @@ import {SearchContext} from './../libs/searchContext';
 import queryMaker from '../libs/APIQueryMaker';
 import styles from '../styles/Custom.module.css';
 
-export default function About() {
+// Custom Search page
+export default function CustomSearch() {
   const [loading, setLoading] = useState(false);
-  const {handleRecipes, recipes, handleQuery} = useContext(SearchContext);
+  const {handleRecipes, recipes} = useContext(SearchContext);
 
   const router = useRouter();
 
@@ -33,7 +34,7 @@ export default function About() {
         handleRecipes(data.results);
       })
     await setLoading(!loading);
-    // await router.push('/results');
+    await router.push('/results');
   }
 
   return (

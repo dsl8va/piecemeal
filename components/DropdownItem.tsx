@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Col, Form, FormControl, InputGroup } from "react-bootstrap";
 
+// Template for form fields on Custom Search page to allow conditional rendering based on +/- buttons
 export default function DropdownItem({ title, options, minmax, fields, handleRemove }) {
   let min = `${title}min`
   let max = `${title}max`

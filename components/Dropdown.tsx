@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import { Button, Col, Form, FormControl, InputGroup } from "react-bootstrap";
-import DropdownItem from "./DropdownItem"
+import { Button, Form } from "react-bootstrap";
+import DropdownItem from "./DropdownItem";
 
+// Dropdown input field template on Custom Search page
 export default function Dropdown({ title, options, minmax }) {
   const [fields, setFields] = useState([{ value: null }]);
-
-  function handleChange(i, event) {
-    const values = [...fields];
-    values[i].value = event.target.value;
-    setFields(values);
-  }
 
   function handleAdd() {
     const values = [...fields];

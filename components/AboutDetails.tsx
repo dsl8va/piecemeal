@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, ListGroup, Row } from "react-bootstrap";
-import CollapseDiet from './CollapseDetailDiet'
+import CollapseDiet from './CollapseDetailDiet';
 
+// Components used in the About page
 const Cuisines =
 <Container>
   <Row className="mb-3">Currently we support 26 different international cuisines:</Row>

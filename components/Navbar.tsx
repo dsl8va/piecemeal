@@ -5,11 +5,12 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Form, Nav, Navbar, NavDropdown, Row,
+  Form, Nav, Navbar, Row,
 } from 'react-bootstrap';
 import { SearchContext } from '../libs/searchContext';
 import styles from '../styles/Navbar.module.css';
 
+// Navbar component for every webpage
 export default function NavBar() {
   const router = useRouter();
   const {handleRecipes} = useContext(SearchContext);

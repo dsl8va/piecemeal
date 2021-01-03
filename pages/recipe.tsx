@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
-import { Container, Row, Image, Card, Col, Button, CardDeck, CardColumns } from 'react-bootstrap';
-import Jumbo from '../components/Jumbo';
+import { Container, Row, Image, Col, Button, CardDeck } from 'react-bootstrap';
 import {SearchContext} from './../libs/searchContext';
 import Link from 'next/link';
 import RecipeInfo from '../components/RecipeInfo';
-import Accordian from '../components/Accordian';
 import Ingredients from '../components/Ingredients';
 import Head from 'next/head';
 import Directions from '../components/Directions';
@@ -12,7 +10,8 @@ import NutrientGraph from '../components/NutrientGraph';
 import RecipeCard from '../components/RecipeCard';
 import styles from '../styles/Recipe.module.css';
 
-const Recipe = () => {
+// Recipe page
+export default function Recipe() {
   const {currentRecipe, recipes} = useContext(SearchContext);
   console.log('current', currentRecipe)
   var blurb, health;
@@ -80,5 +79,3 @@ const Recipe = () => {
     </Container>
   )
 }
-
-export default Recipe;

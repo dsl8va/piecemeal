@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-
+// Recipe Card template for Recipe page for ingredients, directions, etc.
 export default function RecipeCard({title, body}) {
 
   return (

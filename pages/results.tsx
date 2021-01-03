@@ -1,5 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import { Container, Row, Spinner, Image, Button } from 'react-bootstrap';
+import React, {useContext} from 'react';
+import { Container, Button } from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import CardTemplate from '../components/Card';
@@ -7,8 +7,9 @@ import styles from '../styles/Results.module.css';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const Results = () => {
-  const {recipes, query} = useContext(SearchContext);
+// Results page after search
+export default function Results() {
+  const {recipes} = useContext(SearchContext);
 
   let number = recipes.length;
   let title = number == 0 ? "Oh no! Looks like there are no matching recipes" : `${number} matching recipes`;
@@ -39,5 +40,3 @@ const Results = () => {
     </Container>
   )
 }
-
-export default Results;

@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { Card, ListGroup } from "react-bootstrap";
-import Image from 'next/image';
-import styles from '../styles/StepList.module.css'
+import React from "react";
 import Step from "./Step";
 
-
+// Step template for Recipe page
 export default function StepList({list}) {
 
   let steps = list.steps;
