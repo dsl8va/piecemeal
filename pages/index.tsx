@@ -37,9 +37,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({title1, ready1, id1, image1, title2, ready2, id2, image2, title3, ready3, id3, image3, recipes}) {
-  // const {handleFeatured, featured} = useContext(SearchContext);
-  // handleFeatured(recipes);
-  // console.log('home', featured)
+
   return (
     <Container className={styles.pageContainer}>
       <Head>
@@ -47,19 +45,8 @@ export default function Home({title1, ready1, id1, image1, title2, ready2, id2, 
       </Head>
 
       <Jumbo image={"/images/kitchen3.jpg"} imageDesc={"Home page picture"} title={"Piecemeal makes cooking easier"} text={"with the ability to custom search for any kind of recipe"}/>
-      {/* <div className={styles.imageContainer}>
-        <Image
-          className={styles.image}
-          src="/images/kitchen3.jpg"
-          alt="Home page picture"
-          // width={"100%"}
-          // height={200}
-          fluid
-        />
-        <h1 className={styles.imageTitle}>Piecemeal makes cooking easier</h1>
-        <h3 className={styles.imageText}>with the ability to custom search for any kind of recipe</h3>
-      </div> */}
-      <h3 className="my-3 ml-4">Featured recipes:</h3>
+
+      <h3 className={styles.featured}>Featured recipes</h3>
       <CardDeck className="my-3 mx-3">
         <CardTemplate id={id1} title={title1} image={image1} ready={ready1} random={true}/>
         <CardTemplate id={id2} title={title2} image={image2} ready={ready2} random={true}/>

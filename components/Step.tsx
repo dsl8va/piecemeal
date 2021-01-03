@@ -9,9 +9,9 @@ export default function Step({step}) {
   let textStyle = complete ? "#A9A9A9" : "#808080";
 
   return (
-     <span key={step.number}>
-      <Card.Text style={{"color":`${textStyle}`}} onClick={() => setComplete(!complete)} className={styles.step}>
-        <Image
+     <>
+      <Card.Text key={step.number} style={{"color":`${textStyle}`}} onClick={() => setComplete(!complete)} className={styles.step}>
+        <img
         src={complete ? "/greenCheck.ico" : "/grayCheck.ico"}
         alt="Checkbox"
         width={16}
@@ -20,6 +20,6 @@ export default function Step({step}) {
         <b> Step {step.number}</b>
         </Card.Text>
       <Card.Text style={{"color":`${textStyle}`}} className="mb-3">{step.step}</Card.Text>
-    </span>
+    </>
   )
 }

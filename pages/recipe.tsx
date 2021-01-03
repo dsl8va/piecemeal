@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Container, Row, Image, Card, Col, Button } from 'react-bootstrap';
+import { Container, Row, Image, Card, Col, Button, CardDeck, CardColumns } from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import Link from 'next/link';
@@ -63,12 +63,17 @@ const Recipe = () => {
             />
 
             <RecipeInfo time={currentRecipe.readyInMinutes} servings={currentRecipe.servings} diet={currentRecipe.diets} calories={amountFinder(health.nutrients, "Calories")} fat={amountFinder(health.nutrients, "Fat")} carbs={amountFinder(health.nutrients, "Carbohydrates")} protein={amountFinder(health.nutrients, "Protein")}/>
-          {/* </Col> */}
-        </Row>
 
-        <RecipeCard title={"Ingredients"} body={ <Ingredients ingredients={health.ingredients}/>}/>
-        <RecipeCard title={"Directions"} body={ <Directions array={currentRecipe.analyzedInstructions}/>}/>
-        <RecipeCard title={"Nutritional Information"} body={ <NutrientGraph carbsperc={health.caloricBreakdown.percentCarbs} fatperc={health.caloricBreakdown.percentFat} proteinperc={health.caloricBreakdown.percentProtein} allNutrients={health.nutrients}/>}/>
+        </Row>
+        <CardDeck>
+          <Col sm={6}>
+            <RecipeCard title={"Ingredients"} body={ <Ingredients ingredients={health.ingredients} servings={currentRecipe.servings}/>}/>
+            <RecipeCard title={"Nutritional Information"} body={ <NutrientGraph carbsperc={health.caloricBreakdown.percentCarbs} fatperc={health.caloricBreakdown.percentFat} proteinperc={health.caloricBreakdown.percentProtein} allNutrients={health.nutrients}/>}/>
+          </Col>
+
+          <RecipeCard title={"Directions"} body={ <Directions directions={currentRecipe.analyzedInstructions}/>}/>
+
+        </CardDeck>
 
       </>
       }

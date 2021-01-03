@@ -11,26 +11,19 @@ import queryMaker from '../libs/APIQueryMaker';
 import styles from '../styles/Custom.module.css';
 
 export default function About() {
-  const [isLoading, setLoading] = useState(false);
-  const {handleRecipes, recipes, handleQuery} = useContext(SearchContext);
 
-  useEffect(() => {
-      if (isLoading) {
-        setLoading(false);
-      }
-    }, [isLoading]);
+  const {handleRecipes, recipes, handleQuery} = useContext(SearchContext);
 
   const router = useRouter();
 
   const searchRecipe = async e => {
     e.preventDefault();
-    setLoading(true);
 
     const inputs = document.getElementById("custom").elements;
 
     const queryString = await queryMaker(inputs);
 
-    // await handleQuery(`https://api.spoonacular.com/recipes/complexSearch${queryString}&number=100&apiKey=32f3365bab9b42479c0594d00489d7ca`)
+    console.log('querystring', queryString)
 
     const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch${queryString}&number=100&addRecipeNutrition=true&apiKey=32f3365bab9b42479c0594d00489d7ca`)
       .then(response => {
@@ -67,13 +60,14 @@ export default function About() {
           </Col>
         </Form.Row>
 
-        <Dropdown title={"Cuisine"} options={cuisine} minmax={false}/>
-        <Dropdown title={"Diet"} options={diet} minmax={false}/>
-        <Dropdown title={"Intolerances"} options={intolerance} minmax={false}/>
-        <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
-        <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
-        <Button onClick={!isLoading ? searchRecipe : null} className="mb-3" variant="secondary" type="submit">
-          {isLoading ? 'Loading…' : 'Search'}
+          <Dropdown title={"Cuisine"} options={cuisine} minmax={false}/>
+          <Dropdown title={"Diet"} options={diet} minmax={false}/>
+          <Dropdown title={"Intolerances"} options={intolerance} minmax={false}/>
+          <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
+          <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
+
+        <Button onClick={searchRecipe} className="mb-3" variant="secondary" type="submit">
+          Search
         </Button>
       </Form>
 
