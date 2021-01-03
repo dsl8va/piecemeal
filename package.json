@@ -11,12 +11,12 @@
     "bootstrap": "^4.5.3",
     "bootswatch": "^4.5.3",
     "fraction.js": "^4.0.13",
-    "jquery": "^3.5.1",
     "next": "^10.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-share": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.14",

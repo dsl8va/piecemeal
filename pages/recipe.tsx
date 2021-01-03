@@ -9,18 +9,22 @@ import Directions from '../components/Directions';
 import NutrientGraph from '../components/NutrientGraph';
 import RecipeCard from '../components/RecipeCard';
 import styles from '../styles/Recipe.module.css';
+import { EmailShareButton, EmailIcon, FacebookShareButton,FacebookIcon, PinterestShareButton, PinterestIcon, RedditShareButton, RedditIcon, TwitterShareButton, TwitterIcon
+} from "react-share";
 
 // Recipe page
 export default function Recipe() {
   const {currentRecipe, recipes} = useContext(SearchContext);
   console.log('current', currentRecipe)
-  var blurb, health;
+  var blurb, health, text;
   if (currentRecipe) {
     if (currentRecipe.summary) {
 
       blurb = currentRecipe.summary.split('.')[0];
-      blurb = `${blurb}`
-      console.log('blurb', blurb)
+      console.log('blurb1:', blurb)
+      text = blurb.replace(/(<([^>]+)>)/gi, "");
+      console.log('blurb2:', text)
+
     }
     health = currentRecipe.nutrition;
   }
@@ -48,20 +52,42 @@ export default function Recipe() {
       }
 
       <h1 className={styles.center}>{currentRecipe.title}</h1>
+      <p className={styles.center}>{text}</p>
 
-        <Row className="my-3">
-
+        <Row noGutters className="my-3 justify-content-md-center">
+          <Col xs lg="5">
             <Image
               className="mx-auto"
               src={currentRecipe.image}
               alt="Picture of recipe"
               height={400}
-              width={500}
+              width={"100%"}
               fluid
               rounded
             />
-
+          </Col>
+          <Col md="auto" className="my-auto">
+            <span className={styles.container}>
+              <EmailShareButton className={styles.icon} url={window.location.href}>
+                <EmailIcon size={40} round={true}/>
+              </EmailShareButton>
+              <FacebookShareButton className={styles.icon}  url={window.location.href}>
+                <FacebookIcon size={40} round={true}/>
+              </FacebookShareButton>
+              <TwitterShareButton className={styles.icon} url={window.location.href}>
+                <TwitterIcon size={40} round={true}/>
+              </TwitterShareButton>
+              <PinterestShareButton className={styles.icon} media={currentRecipe.image} url={window.location.href}>
+                <PinterestIcon size={40} round={true}/>
+              </PinterestShareButton>
+              <RedditShareButton className={styles.icon} url={window.location.href}>
+                <RedditIcon size={40} round={true}/>
+              </RedditShareButton>
+            </span>
+          </Col>
+          <Col xs lg="2" className="my-auto">
             <RecipeInfo time={currentRecipe.readyInMinutes} servings={currentRecipe.servings} diet={currentRecipe.diets} calories={amountFinder(health.nutrients, "Calories")} fat={amountFinder(health.nutrients, "Fat")} carbs={amountFinder(health.nutrients, "Carbohydrates")} protein={amountFinder(health.nutrients, "Protein")}/>
+          </Col>
 
         </Row>
         <CardDeck>

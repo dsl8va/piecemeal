@@ -3,3 +3,14 @@
   margin: 0 20px 0 0;
   font-weight: 500;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 20px;
+}
+
+.icon {
+  margin-bottom: 5px;
+}
