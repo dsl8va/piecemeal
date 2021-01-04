@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import { Container, CardDeck } from 'react-bootstrap';
+import { Container, CardDeck, Col, Row } from 'react-bootstrap';
 import CardTemplate from '../components/Card';
 import styles from '../styles/index.module.css';
 import Jumbo from '../components/Jumbo';
@@ -43,12 +43,21 @@ export default function Home({title1, ready1, id1, image1, title2, ready2, id2, 
 
       <Jumbo image={"/images/kitchen3.jpg"} imageDesc={"Home page picture"} title={"Piecemeal makes cooking easier"} text={"with the ability to custom search for any kind of recipe"}/>
 
-      <h3 className={styles.featured}>Featured recipes</h3>
-      <CardDeck className="my-3 mx-3">
-        <CardTemplate id={id1} title={title1} image={image1} ready={ready1} random={true}/>
-        <CardTemplate id={id2} title={title2} image={image2} ready={ready2} random={true}/>
-        <CardTemplate id={id3} title={title3} image={image3} ready={ready3} random={true}/>
-      </CardDeck>
+      <Row className="justify-content-md-center">
+        <Col lg="8">
+           <h4 className={styles.featured}>Featured recipes</h4>
+        </Col>
+      </Row>
+
+      <Row className="justify-content-md-center">
+        <Col lg="8">
+          <CardDeck className="my-3 mx-3">
+            <CardTemplate id={id1} title={title1} image={image1} ready={ready1} random={true}/>
+            <CardTemplate id={id2} title={title2} image={image2} ready={ready2} random={true}/>
+            <CardTemplate id={id3} title={title3} image={image3} ready={ready3} random={true}/>
+          </CardDeck>
+        </Col>
+      </Row>
 
     </Container>
   )

@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, ListGroup, Row } from "react-bootstrap";
+import { ListGroup, Row } from "react-bootstrap";
 import CollapseDiet from './CollapseDetailDiet';
 
 // Components used in the About page
 const Cuisines =
-<Container>
+<>
   <Row className="mb-3">Currently we support 26 different international cuisines:</Row>
   <Row>
     <ListGroup variant='flush'>
@@ -43,11 +43,11 @@ const Cuisines =
 
     </ListGroup>
   </Row>
-</Container>
+</>
 ;
 
 const Intolerances =
-    <Container>
+    <>
       <Row className="mb-3">Narrow your search down by the supported list of diet intolerances below:</Row>
       <Row>
         <ListGroup variant='flush'>
@@ -71,11 +71,11 @@ const Intolerances =
           <ListGroup.Item>Wheat</ListGroup.Item>
         </ListGroup>
       </Row>
-    </Container>
+    </>
 ;
 
 const CustomSearch =
-<Container>
+<>
     <Row className="mb-3">Our calling card. You can create a custom search by identifying a max or min amount of the following macro and micro nutrients:</Row>
     <Row>
     <ListGroup variant='flush'>
@@ -127,7 +127,7 @@ const CustomSearch =
       <ListGroup.Item>Selenium (in µg)</ListGroup.Item>
     </ListGroup>
   </Row>
-  </Container>
+  </>
 ;
 
 const gluten = 'Eliminating gluten means avoiding wheat, barley, rye, and other gluten-containing grains and foods made from them (or that may have been cross contaminated).';
@@ -142,7 +142,7 @@ const primal = 'Very similar to Paleo, except dairy is allowed - think raw and f
 const whole30 = 'Allowed ingredients include meat, fish/seafood, eggs, vegetables, fresh fruit, coconut oil, olive oil, small amounts of dried fruit and nuts/seeds. Ingredients not allowed include added sweeteners (natural and artificial, except small amounts of fruit juice), dairy (except clarified butter or ghee), alcohol, grains, legumes (except green beans, sugar snap peas, and snow peas), and food additives, such as carrageenan, MSG, and sulfites.';
 
 const Diets =
-  <Container>
+  <>
     <Row className="mb-3">We support a variety of diets. Click on any for additional details. </Row>
     <CollapseDiet diet={'Gluten Free'} definition={gluten}/>
     <CollapseDiet diet={'Ketogenic'} definition={keto}/>
@@ -154,7 +154,7 @@ const Diets =
     <CollapseDiet diet={'Paleo'} definition={paleo}/>
     <CollapseDiet diet={'Primal'} definition={primal}/>
     <CollapseDiet diet={'Whole 30'} definition={whole30}/>
-  </Container>
+  </>
 ;
 
 export {

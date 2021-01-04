@@ -1,0 +1,20 @@
+.white {
+  font-weight: 600;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+
+.white:hover {
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* align-self: center; */
+  align-content: center;
+  justify-content: center;
+  background-color: #78c2ad;
+  padding: 10px 0;
+}

@@ -12,7 +12,7 @@ export default function Results() {
   const {recipes} = useContext(SearchContext);
 
   let number = recipes.length;
-  let title = number == 0 ? "Oh no! Looks like there are no matching recipes" : `${number} matching recipes`;
+  let title = number == 0 ? "Oh no! Looks like there are no matching recipes" : number == 1 ? `1 matching recipe` : `${number} matching recipes`;
   let text = number == 0 ? "try again with less stringent search parameters" : "let's get cooking!"
 
   return (

@@ -50,6 +50,9 @@ export default function NavBar() {
            <Link href="/custom" passHref>
              <Nav.Link>Custom Search</Nav.Link>
            </Link>
+           <Link href="/contact" passHref>
+             <Nav.Link>Contact</Nav.Link>
+           </Link>
 
         </Nav>
 

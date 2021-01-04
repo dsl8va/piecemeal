@@ -1,0 +1,17 @@
+.param {
+  color: #505050;
+  margin: 4px 0;
+}
+
+.button {
+  height: 20px;
+  width: 20px;
+  padding: 0px;
+  align-self: center;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}

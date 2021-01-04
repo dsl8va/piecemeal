@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Col, Form, FormControl, InputGroup } from "react-bootstrap";
+import styles from "../styles/DropdownItem.module.css";
 
 // Template for form fields on Custom Search page to allow conditional rendering based on +/- buttons
 export default function DropdownItem({ title, options, minmax, fields, handleRemove }) {
@@ -9,9 +10,14 @@ export default function DropdownItem({ title, options, minmax, fields, handleRem
   return (
     <>
       {fields.map((field, idx) => {
+
           return (
             <>
-              <Col sm={3} className="my-1">
+            {idx == 0 &&
+               <Form.Label column sm={2} className={styles.param}>{title}</Form.Label>
+            }
+
+              <Col sm={4}>
 
                   <Form.Label className="mr-sm-2" htmlFor={title} srOnly>
                     {title}
@@ -27,9 +33,8 @@ export default function DropdownItem({ title, options, minmax, fields, handleRem
                     {options}
                   </Form.Control>
                 </Col>
-                {!minmax && <Button size="sm" onClick={() => handleRemove(idx)} variant="danger">-</Button>}
 
-                {fields.length > 1 ? `\n` :null}
+                {!minmax && <Button className={styles.button} size="sm" onClick={() => handleRemove(idx)} variant="danger">-</Button>}
 
                 {minmax &&
                   <>
@@ -59,7 +64,7 @@ export default function DropdownItem({ title, options, minmax, fields, handleRem
                         />
                       </InputGroup>
                     </Col>
-                    <Button size="sm" onClick={() => handleRemove(idx)} variant="danger">-</Button>
+                    <Button className={styles.button}size="sm" onClick={() => handleRemove(idx)} variant="danger">-</Button>
                 </>
               }
             </>

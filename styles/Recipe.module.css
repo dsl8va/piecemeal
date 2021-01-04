@@ -4,6 +4,12 @@
   font-weight: 500;
 }
 
+.title {
+  text-align: center;
+  margin: 20px 20px 5px 0;
+  font-weight: 600;
+}
+
 .container {
   display: flex;
   flex-direction: column;

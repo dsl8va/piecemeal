@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import '../styles/globals.css';
@@ -13,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
       <SearchProvider>
         <Navbar />
         <Component {...pageProps}/>
+        <Footer />
       </SearchProvider>
     </Container>
   )

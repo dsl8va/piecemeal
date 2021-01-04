@@ -46,40 +46,42 @@ export default function CustomSearch() {
       <Jumbo image={"/images/kitchen9.jpeg"} imageDesc={"Custom search page picture"} title={"Create your own custom search"} text={"with as few or as many parameters as you like"}/>
 
       {recipes.length > 0 &&
-      <Link href="/results" passHref>
-        <Button className={styles.button} variant="outline-secondary">Back to search results</Button>
-      </Link>}
+        <Link href="/results" passHref>
+          <Button className={styles.button} variant="outline-secondary">Back to search results</Button>
+        </Link>}
 
-      <Form id="custom" className={styles.customForm} onSubmit={searchRecipe}>
+      <span className={styles.container}>
+        <Form className={styles.customForm} id="custom" onSubmit={searchRecipe}>
 
-         <Form.Row>
-          <Form.Label column sm={2}>
-            Keywords
-          </Form.Label>
-          <Col sm={3} className={styles.keyword}>
-            <Form.Control id="query" type="text" placeholder="Search keywords here..." />
-          </Col>
-        </Form.Row>
+          <Form.Row>
+            <Form.Label column sm={1} className={styles.textColor}>
+              Keywords
+            </Form.Label>
+            <Col sm={4} className={styles.keyword}>
+              <Form.Control id="query" type="text" placeholder="Search keywords here..." />
+            </Col>
+          </Form.Row>
 
-          <Dropdown title={"Cuisine"} options={cuisine} minmax={false}/>
-          <Dropdown title={"Diet"} options={diet} minmax={false}/>
-          <Dropdown title={"Intolerances"} options={intolerance} minmax={false}/>
-          <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
-          <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
+            <Dropdown title={"Cuisine"} options={cuisine} minmax={false}/>
+            <Dropdown title={"Diet"} options={diet} minmax={false}/>
+            <Dropdown title={"Intolerances"} options={intolerance} minmax={false}/>
+            <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
+            <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
 
-        <Button onClick={searchRecipe} className={styles.search} variant="secondary" type="submit">
-          {!loading ? "Search" :
-            <Spinner
-            as="span"
-            variant="white"
-            animation="border"
-            size="sm"
-            role="status"
-          />
-          }
-          <span className="sr-only">Loading...</span>
-        </Button>
-      </Form>
+          <Button className={styles.search} onClick={searchRecipe} variant="secondary" type="submit">
+            {!loading ? "Search" :
+              <Spinner
+              as="span"
+              variant="white"
+              animation="border"
+              size="sm"
+              role="status"
+            />
+            }
+            <span className="sr-only">Loading...</span>
+          </Button>
+        </Form>
+      </span>
 
     </Container>
   )

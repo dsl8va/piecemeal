@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import DropdownItem from "./DropdownItem";
+import styles from "../styles/Dropdown.module.css";
 
 // Dropdown input field template on Custom Search page
 export default function Dropdown({ title, options, minmax }) {
@@ -19,13 +20,13 @@ export default function Dropdown({ title, options, minmax }) {
   }
 
   return (
-
-    <Form.Row className="align-items-center">
-      <Button className="ml-1" size="sm" onClick={() => handleAdd()} variant="success">+</Button>
-      <Form.Label column sm={2}>{title}</Form.Label>
+    <span className={styles.container}>
+    {/* <Form.Row className="align-items-center"> */}
+      <Button className={styles.button} size="sm" onClick={() => handleAdd()} variant="success">+</Button>
+      {/* <Form.Label column sm={2} className={styles.param}>{title}</Form.Label> */}
 
         <DropdownItem title={title} options={options} minmax={minmax} fields={fields} handleRemove={handleRemove}/>
-
-     </Form.Row>
+     {/* </Form.Row> */}
+     </span>
   )
 }

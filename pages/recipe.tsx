@@ -19,12 +19,8 @@ export default function Recipe() {
   var blurb, health, text;
   if (currentRecipe) {
     if (currentRecipe.summary) {
-
       blurb = currentRecipe.summary.split('.')[0];
-      console.log('blurb1:', blurb)
       text = blurb.replace(/(<([^>]+)>)/gi, "");
-      console.log('blurb2:', text)
-
     }
     health = currentRecipe.nutrition;
   }
@@ -45,17 +41,17 @@ export default function Recipe() {
       </Head>
       {!Array.isArray(currentRecipe) &&
       <>
-      {recipes.length > 0 &&
-      <Link href="/results" passHref>
-        <Button className="mx-3 my-3" variant="outline-secondary">Back to search results</Button>
-      </Link>
-      }
+        {recipes.length > 0 &&
+        <Link href="/results" passHref>
+          <Button className="mx-3 mt-3" variant="outline-secondary">Back to search results</Button>
+        </Link>
+        }
 
-      <h1 className={styles.center}>{currentRecipe.title}</h1>
-      <p className={styles.center}>{text}</p>
+        <h1 className={styles.title}>{currentRecipe.title}</h1>
+        <p className={styles.center}>{text}</p>
 
         <Row noGutters className="my-3 justify-content-md-center">
-          <Col xs lg="5">
+          <Col xs lg="4">
             <Image
               className="mx-auto"
               src={currentRecipe.image}
@@ -88,18 +84,15 @@ export default function Recipe() {
           <Col xs lg="2" className="my-auto">
             <RecipeInfo time={currentRecipe.readyInMinutes} servings={currentRecipe.servings} diet={currentRecipe.diets} calories={amountFinder(health.nutrients, "Calories")} fat={amountFinder(health.nutrients, "Fat")} carbs={amountFinder(health.nutrients, "Carbohydrates")} protein={amountFinder(health.nutrients, "Protein")}/>
           </Col>
-
         </Row>
+
         <CardDeck>
           <Col sm={6}>
             <RecipeCard title={"Ingredients"} body={ <Ingredients ingredients={health.ingredients} servings={currentRecipe.servings}/>}/>
             <RecipeCard title={"Nutritional Information"} body={ <NutrientGraph carbsperc={health.caloricBreakdown.percentCarbs} fatperc={health.caloricBreakdown.percentFat} proteinperc={health.caloricBreakdown.percentProtein} allNutrients={health.nutrients}/>}/>
           </Col>
-
           <RecipeCard title={"Directions"} body={ <Directions directions={currentRecipe.analyzedInstructions}/>}/>
-
         </CardDeck>
-
       </>
       }
     </Container>
