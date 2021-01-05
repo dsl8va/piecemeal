@@ -4,3 +4,16 @@
   padding: 0;
   padding-bottom: 20px;
 }
+
+.dropdown {
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  color: #505050;
+}
+
+.aboutText {
+  margin-top: 20px;
+}

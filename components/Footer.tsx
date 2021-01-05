@@ -15,6 +15,7 @@ export default function Footer() {
       <p className="mx-auto">
         Fake Copyright &copy; 2020 Piecemeal LLC
       </p>
+      <p className="mx-auto">By Daniel Lee</p>
     </Container>
   )
 }

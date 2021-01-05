@@ -57,7 +57,7 @@ export default function CustomSearch() {
             <Form.Label column sm={1} className={styles.textColor}>
               Keywords
             </Form.Label>
-            <Col sm={4} className={styles.keyword}>
+            <Col sm={6} className={styles.keyword}>
               <Form.Control id="query" type="text" placeholder="Search keywords here..." />
             </Col>
           </Form.Row>

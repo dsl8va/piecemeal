@@ -15,32 +15,29 @@ const Cuisines =
       <ListGroup.Item>Caribbean</ListGroup.Item>
       <ListGroup.Item>Chinese</ListGroup.Item>
       <ListGroup.Item>Eastern European</ListGroup.Item>
-    </ListGroup>
-    <ListGroup variant='flush'>
       <ListGroup.Item>European</ListGroup.Item>
       <ListGroup.Item>French</ListGroup.Item>
+    </ListGroup>
+    <ListGroup variant='flush'>
       <ListGroup.Item>German</ListGroup.Item>
       <ListGroup.Item>Greek</ListGroup.Item>
       <ListGroup.Item>Indian</ListGroup.Item>
       <ListGroup.Item>Irish</ListGroup.Item>
       <ListGroup.Item>Italian</ListGroup.Item>
-    </ListGroup>
-    <ListGroup variant='flush'>
       <ListGroup.Item>Japanese</ListGroup.Item>
       <ListGroup.Item>Jewish</ListGroup.Item>
       <ListGroup.Item>Korean</ListGroup.Item>
       <ListGroup.Item>Latin American</ListGroup.Item>
-      <ListGroup.Item>Mediterranean</ListGroup.Item>
-      <ListGroup.Item>Mexican</ListGroup.Item>
     </ListGroup>
     <ListGroup variant='flush'>
+      <ListGroup.Item>Mediterranean</ListGroup.Item>
+      <ListGroup.Item>Mexican</ListGroup.Item>
       <ListGroup.Item>Middle Eastern</ListGroup.Item>
       <ListGroup.Item>Nordic</ListGroup.Item>
       <ListGroup.Item>Southern</ListGroup.Item>
       <ListGroup.Item>Spanish</ListGroup.Item>
       <ListGroup.Item>Thai</ListGroup.Item>
       <ListGroup.Item>Vietnamese</ListGroup.Item>
-
     </ListGroup>
   </Row>
 </>
@@ -76,7 +73,7 @@ const Intolerances =
 
 const CustomSearch =
 <>
-    <Row className="mb-3">Our calling card. You can create a custom search by identifying a max or min amount of the following macro and micro nutrients:</Row>
+    <Row className="mb-3">What sets us apart. You can create a custom search by identifying a max or min amount of the following macro and micro nutrients:</Row>
     <Row>
     <ListGroup variant='flush'>
       <ListGroup.Item>Calories (in kcal)</ListGroup.Item>
@@ -89,8 +86,6 @@ const CustomSearch =
       <ListGroup.Item>Cholesterol (in mg)</ListGroup.Item>
       <ListGroup.Item>Carbohydrates (in g)</ListGroup.Item>
       <ListGroup.Item>Net Carbohydrates (in g)</ListGroup.Item>
-    </ListGroup>
-    <ListGroup variant='flush'>
       <ListGroup.Item>Alcohol (in g)</ListGroup.Item>
       <ListGroup.Item>Fiber (in g)</ListGroup.Item>
       <ListGroup.Item>Sugar (in g)</ListGroup.Item>
@@ -113,8 +108,6 @@ const CustomSearch =
       <ListGroup.Item>Vitamin B2 (in mg)</ListGroup.Item>
       <ListGroup.Item>Vitamin B3 (in mg)</ListGroup.Item>
       <ListGroup.Item>Vitamin B5 (in mg)</ListGroup.Item>
-    </ListGroup>
-    <ListGroup variant='flush'>
       <ListGroup.Item>Vitamin B6 (in mg)</ListGroup.Item>
       <ListGroup.Item>Vitamin B12 (in µg)</ListGroup.Item>
       <ListGroup.Item>Vitamin C (in mg)</ListGroup.Item>

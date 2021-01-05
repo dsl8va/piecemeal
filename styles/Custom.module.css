@@ -7,6 +7,7 @@
 .customForm {
   max-width: 800px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .button {
@@ -21,11 +22,13 @@
 
 .search {
   width: 100px;
+  display: block;
+  text-align: center;
   margin: 10px auto;
 }
 
 .keyword {
-  margin-left: 68px;
+  margin-left: 65px;
 }
 
 .container {
@@ -36,5 +39,6 @@
 
 .textColor {
   color: #505050;
-  margin-left: 20px;
+  margin-left: 35px;
+  margin-bottom: 10px;
 }
