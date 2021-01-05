@@ -20,7 +20,12 @@ export default function CustomSearch() {
   const searchRecipe = async e => {
     e.preventDefault();
     await setLoading(!loading);
-    const inputs = document.getElementById("custom").elements;
+    // const form = document.getElementById("customSearch") as HTMLInputElement
+    // console.log('form', form.value);
+    // const inputs = form.elements;
+
+    const inputs = document.getElementById("customSearch").elements
+
     console.log('inputs', inputs);
     const queryString = await queryMaker(inputs);
 
@@ -51,7 +56,8 @@ export default function CustomSearch() {
         </Link>}
 
       <span className={styles.container}>
-        <Form className={styles.customForm} id="custom" onSubmit={searchRecipe}>
+        <Form className={styles.customForm} id="customSearch" onSubmit={searchRecipe}>
+        <Form.Group>
 
           <Form.Row>
             <Form.Label column sm={1} className={styles.textColor}>
@@ -67,6 +73,7 @@ export default function CustomSearch() {
             <Dropdown title={"Intolerances"} options={intolerance} minmax={false}/>
             <Dropdown title={"Nutrient"} options={nutrient} minmax={true}/>
             <Dropdown title={"Vitamin"} options={vitamin} minmax={true}/>
+        </Form.Group>
 
           <Button className={styles.search} onClick={searchRecipe} variant="secondary" type="submit">
             {!loading ? "Search" :
