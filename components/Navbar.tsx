@@ -2,10 +2,10 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import React, { useContext } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Form, Nav, Navbar, Row,
+  Form, Nav, Navbar, Row, Image
 } from 'react-bootstrap';
 import { SearchContext } from '../libs/searchContext';
 import styles from '../styles/Navbar.module.css';
