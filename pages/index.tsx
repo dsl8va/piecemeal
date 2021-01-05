@@ -5,10 +5,11 @@ import CardTemplate from '../components/Card';
 import styles from '../styles/index.module.css';
 import Jumbo from '../components/Jumbo';
 
+
 // Root Home page
 export async function getStaticProps() {
 
-  const res = await fetch(`https://api.spoonacular.com/recipes/random?number=3&apiKey=32f3365bab9b42479c0594d00489d7ca`);
+  const res = await fetch(`https://api.spoonacular.com/recipes/random?number=3&apiKey=${process.env.API_KEY}`);
   const data = await res.json();
   const recipes = data.recipes;
 
