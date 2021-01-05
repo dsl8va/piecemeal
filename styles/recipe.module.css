@@ -1,0 +1,22 @@
+.center {
+  text-align: center;
+  margin: 0 20px 0 0;
+  font-weight: 500;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 20px 5px 0;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 0 20px;
+}
+
+.icon {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,44 @@
+.pageContainer {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.customForm {
+  max-width: 850px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.button {
+  margin: 10px auto 10px 40px;
+}
+
+.buttonAdd {
+  height: 20px;
+  width: 20px;
+  padding: 0px;
+}
+
+.search {
+  width: 100px;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.keyword {
+  margin-left: 70px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.textColor {
+  color: #505050;
+  margin-left: 35px;
+  margin-bottom: 10px;
+}

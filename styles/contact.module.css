@@ -1,0 +1,30 @@
+.pageContainer {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.map {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.address {
+  color: #505050;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
