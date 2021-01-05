@@ -5,7 +5,7 @@ import Jumbo from "../components/Jumbo";
 import styles from "../styles/Contact.module.css";
 
 export default function Contact() {
-  let source = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb_9npgVMtokR0IyeuuY4WaY&key=${process.env.GOOGLE_MAPS}`
+  let source = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb_9npgVMtokR0IyeuuY4WaY&key=${process.env.GOOGLEMAPS}`
   return (
      <Container className={styles.pageContainer}>
       <Head>
