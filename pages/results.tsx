@@ -3,7 +3,7 @@ import { Container, Button } from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import CardTemplate from '../components/Card';
-import styles from '../styles/Results.module.css';
+import styles from '../styles/results.module.css';
 import Link from 'next/link';
 import Head from 'next/head';
 

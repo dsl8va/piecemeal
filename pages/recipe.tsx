@@ -8,7 +8,7 @@ import Head from 'next/head';
 import Directions from '../components/Directions';
 import NutrientGraph from '../components/NutrientGraph';
 import RecipeCard from '../components/RecipeCard';
-import styles from '../styles/Recipe.module.css';
+import styles from '../styles/recipe.module.css';
 import { EmailShareButton, EmailIcon, FacebookShareButton,FacebookIcon, PinterestShareButton, PinterestIcon, RedditShareButton, RedditIcon, TwitterShareButton, TwitterIcon
 } from "react-share";
 

@@ -3,7 +3,7 @@ import React from 'react';
 import CollapseDetail from '../components/CollapseDetail';
 import { Col, Container, Row} from 'react-bootstrap';
 import Jumbo from '../components/Jumbo';
-import styles from '../styles/About.module.css';
+import styles from '../styles/about.module.css';
 
 const Details = require('../components/AboutDetails')
 

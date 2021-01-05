@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import Jumbo from "../components/Jumbo";
-import styles from "../styles/Contact.module.css";
+import styles from "../styles/contact.module.css";
 
 export default function Contact() {
   let source = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb_9npgVMtokR0IyeuuY4WaY&key=${process.env.GOOGLE_MAPS}`

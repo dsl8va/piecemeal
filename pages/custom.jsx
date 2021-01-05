@@ -8,7 +8,7 @@ import Dropdown from '../components/Dropdown';
 import Jumbo from '../components/Jumbo';
 import {SearchContext} from './../libs/searchContext';
 import queryMaker from '../libs/APIQueryMaker';
-import styles from '../styles/Custom.module.css';
+import styles from '../styles/custom.module.css';
 
 // Custom Search page
 export default function CustomSearch() {
