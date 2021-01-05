@@ -17,7 +17,7 @@ export default function DropdownItem({ title, options, minmax, fields, handleRem
                <Form.Label column sm={2} className={styles.param}>{title}</Form.Label>
             }
 
-              <Col sm={4}>
+              <Col sm={3}>
 
                   <Form.Label className="mr-sm-2" htmlFor={title} srOnly>
                     {title}
@@ -38,7 +38,7 @@ export default function DropdownItem({ title, options, minmax, fields, handleRem
 
                 {minmax &&
                   <>
-                    <Col sm={2}>
+                    <Col sm={3}>
                       <InputGroup>
                         <InputGroup.Prepend>
                           <InputGroup.Text>Min</InputGroup.Text>
@@ -51,7 +51,7 @@ export default function DropdownItem({ title, options, minmax, fields, handleRem
                         />
                       </InputGroup>
                     </Col>
-                    <Col sm={2}>
+                    <Col sm={3}>
                       <InputGroup>
                         <InputGroup.Prepend>
                           <InputGroup.Text>Max</InputGroup.Text>
