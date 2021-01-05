@@ -5,7 +5,7 @@ import Jumbo from "../components/Jumbo";
 import styles from "../styles/Contact.module.css";
 
 export default function Contact() {
-
+  let source = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb_9npgVMtokR0IyeuuY4WaY&key=${process.env.GOOGLE_MAPS}`
   return (
      <Container className={styles.pageContainer}>
       <Head>
@@ -18,7 +18,8 @@ export default function Contact() {
         <div>
           <h2 className={styles.title}>Visit us!</h2><br/>
           <span>
-              <iframe className={styles.center} width="500" height="400" frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0} src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJb_9npgVMtokR0IyeuuY4WaY&key=AIzaSyAhq_ureDOSPl-32qKlAqZWjArVUwSzdCg"></iframe>
+              <iframe className={styles.center} width="500" height="400" frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0} src={source}
+              ></iframe>
           </span>
           <div className={styles.address}>
             <strong>Piecemeal HQ</strong><br/>
